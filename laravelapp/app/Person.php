@@ -2,11 +2,16 @@
 
 namespace App;
 
+use App\Scopes\ScopePerson;
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    //
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope(new ScopePerson);
+    }
     public function getData()
     {
         # code...
