@@ -8,9 +8,8 @@
     @endsection
     @section('content')
         <p>ここが本文のコンテンツです。</p>
-        <ui>
-            @each('components.item', $data, 'item')
-        </ui>
+        <p>Controller value<br>'message' = {{$message}}</p>
+        <p>View Composer value <br>'view_message' = {{$view_message}}</p>
     @endsection
     @section('footer')
         copyright 2020 tuyano.
