@@ -8,9 +8,9 @@
     @endsection
     @section('content')
         <p>ここが本文のコンテンツです。</p>
-        <p>好きなだけ記述できます。</p>
-    @include('components.message',["msg_title"=>"OK",
-            "msg_content"=>"サブビューです。"])
+        <ui>
+            @each('components.item', $data, 'item')
+        </ui>
     @endsection
     @section('footer')
         copyright 2020 tuyano.
