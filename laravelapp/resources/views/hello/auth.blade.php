@@ -1,0 +1,20 @@
+@extends('layouts.helloapp')
+@section('title',"ユーザ認証")
+    @section('menubar')
+        @parent
+        ユーザ認証ページ
+    @endsection
+    @section('content')
+    <p>{{$message}}</p>
+    <form action="/hello/auth" method="POST">
+      @csrf
+        <table>
+          <tr><th>mail:</th><td><input type="text" name="email" value="{{old("email")}}"></td></tr>
+          <tr><th>pass:</th><td><input type="text" name="password" value="{{old("password")}}"></td></tr>
+          <tr><th></th><td><input type="submit" value="send"></td></tr>
+        </table>
+    </form>
+    @endsection
+    @section('footer')
+        copyright 2020 tuyano.
+    @endsection
