@@ -18,4 +18,9 @@ class Person extends Model
         # code...
         return $this->id.':'.$this->name.'('.$this->age.')';
     }
+    public function boards()
+    {
+        # code...
+        return $this->hasMany("App\Board");
+    }
 }
